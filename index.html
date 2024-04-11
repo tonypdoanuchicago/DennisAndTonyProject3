@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Cards</title>
+    <style>
+        .medium-card {
+            width: 300px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 20px auto;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .medium-card:hover {
+            background-color: #e0e0e0;
+        }
+
+        .medium-card.clicked {
+            animation: rainbow 2s infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-color: #ff0000; /* Red */
+            }
+            16.666% {
+                background-color: #ff7f00; /* Orange */
+            }
+            33.333% {
+                background-color: #ffff00; /* Yellow */
+            }
+            50% {
+                background-color: #00ff00; /* Green */
+            }
+            66.666% {
+                background-color: #0000ff; /* Blue */
+            }
+            83.333% {
+                background-color: #4b0082; /* Indigo */
+            }
+            100% {
+                background-color: #9400d3; /* Violet */
+            }
+        }
+
+        .medium-card + .medium-card {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="medium-card" onclick="animateRainbow(this)">Click to animate</div>
+    <div class="medium-card" onclick="broadcastLink()">Click to broadcast link</div>
+
+    <script>
+        function animateRainbow(card) {
+            card.classList.toggle('clicked');
+        }
+
+        function broadcastLink() {
+            window.location = 'youtube://watch?v=Vb0dG-2huJE&t=17s';
+        }
+    </script>
+</body>
+</html>
